@@ -1,0 +1,23 @@
+body{
+    font-family: Arial;
+    max-width: 800px;
+    margin:auto;
+    padding:20px;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:10px;
+    margin-bottom:10px;
+}
+
+button{
+    padding:10px 20px;
+}
+
+.aviso{
+    border:1px solid #ccc;
+    padding:15px;
+    margin-bottom:10px;
+}

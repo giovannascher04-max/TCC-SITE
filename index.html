@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mural Escolar</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+    <h1>Mural de Avisos e Sugestões</h1>
+
+    <section>
+
+        <h2>Enviar Sugestão</h2>
+
+        <input type="text" id="nome">
+        <input type="text" id="turma">
+        <textarea id="sugestoes"></textarea>
+
+        <button onclick="enviarsugestoes()">
+            Enviar
+        </button>
+
+    </section>
+
+    <hr>
+
+    <section>
+
+        <h2>Avisos da Escola</h2>
+
+        <div id="avisos"></div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
