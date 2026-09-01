@@ -1,45 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Mural Escolar</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fala, Aluno!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-    <h1>Mural de Avisos e Sugestões</h1>
+  <header class="topbar">
+    <div class="topbar__brand">
+      <span class="topbar__title">Fala, Aluno!</span>
+    </div>
 
-    <section>
+    <nav class="tabs" role="tablist" aria-label="Filtrar aulas">
+      <button class="tab is-active" data-filter="todas" role="tab" aria-selected="true">
+        Todas as aulas
+      </button>
+      <button class="tab" data-filter="recomendadas" role="tab" aria-selected="false">
+        Aulas recomendadas
+      </button>
+      <button class="tab" data-filter="pendentes" role="tab" aria-selected="false">
+        Aulas pendentes
+      </button>
+      <button class="tab" data-filter="assistidas" role="tab" aria-selected="false">
+        Aulas assistidas
+      </button>
+    </nav>
+  </header>
 
-        <h2>Enviar Sugestão</h2>
+  <main class="page">
+    <div class="page__head">
+      <h1>Suas disciplinas</h1>
+      <p id="resultCount" class="page__count">6 aulas</p>
+    </div>
 
-        <input type="text" id="nome">
-        <input type="text" id="turma">
-        <textarea id="sugestoes"></textarea>
-
-        <button onclick="enviarsugestoes()">
-            Enviar
-        </button>
-
+    <section id="grid" class="grid">
+      <!-- os cards são inseridos aqui pelo script.js -->
     </section>
 
-    <hr>
+    <p id="emptyState" class="empty" hidden>Nenhuma aula nesse filtro ainda.</p>
+  </main>
 
-    <section>
+  <div id="modal" class="modal" hidden>
+    <div class="modal__card">
+      <button id="modalClose" class="modal__close" aria-label="Fechar">×</button>
+      <div id="modalIcon" class="modal__icon"></div>
+      <p id="modalStatus" class="modal__status"></p>
+      <h2 id="modalTitle"></h2>
+      <p id="modalTeacher" class="modal__teacher"></p>
+      <p id="modalDesc"></p>
+      <button id="modalAction" class="btn btn--primary">Acessar aula</button>
+    </div>
+  </div>
 
-        <h2>Avisos da Escola</h2>
-
-        <div id="avisos"></div>
-
-    </section>
-
-    <script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
-
 </html>
